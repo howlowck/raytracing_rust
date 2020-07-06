@@ -95,7 +95,7 @@ pub fn simple_viewport() -> std::io::Result<()> {
  */
 
 pub fn simple_sphere() -> std::io::Result<()> {
-    let mut file = File::create("data/viewport.ppm")?;
+    let mut file = File::create("data/simple_sphere.ppm")?;
     let aspect_ratio = 16.0 / 9.0;
     let image_width = 768; // Aspect Ratio: 16/9
     let image_height = 432;
