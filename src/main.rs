@@ -26,6 +26,7 @@ fn main() {
     match name {
         "2" => run_project(&name, raytracing::simple_ppm),
         "4" => run_project(&name, raytracing::simple_viewport),
+        "5" => run_project(&name, raytracing::simple_sphere),
         _ => println!("sorry the function {} does not exist", name)
     }
 }

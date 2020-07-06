@@ -22,11 +22,11 @@ impl ToRgb for Vec3 {
 }
 
 pub trait Dot {
-    fn dot(self, rhs: Vec3) -> f32;
+    fn dot(&self, rhs: Vec3) -> f32;
 }
 
 impl Dot for Vec3 {
-    fn dot(self, rhs: Vec3) -> f32 {
+    fn dot(&self, rhs: Vec3) -> f32 {
         return
             self.value[0] * rhs.value[0] +
             self.value[1] * rhs.value[1] +
@@ -35,11 +35,11 @@ impl Dot for Vec3 {
 }
 
 pub trait Cross {
-    fn cross(self, rhs: Vec3) -> Vec3;
+    fn cross(&self, rhs: Vec3) -> Vec3;
 }
 
 impl Cross for Vec3 {
-    fn cross(self, rhs: Vec3) -> Vec3 {
+    fn cross(&self, rhs: Vec3) -> Vec3 {
         return Vec3 { value: [
             self.value[1] * rhs.value[2] - self.value[2] * rhs.value[1],
             self.value[2] * rhs.value[0] - self.value[0] * rhs.value[2],
@@ -125,13 +125,20 @@ pub fn unit_vector(vec: &Vec3) -> Vec3 {
     return vec / vec.value.len() as f32;
 }
 
+pub fn dot(lhs: &Vec3, rhs: &Vec3) -> f32 {
+    return
+        lhs.value[0] * rhs.value[0] +
+        lhs.value[1] * rhs.value[1] +
+        lhs.value[2] * rhs.value[2];
+}
+
 pub struct Ray {
     pub origin: Vec3,
     pub direction: Vec3
 }
 
-impl Ray {
-    fn at(&self, t: f32) -> Vec3 {
-        return self.origin + t * self.direction
-    }
-}
+// impl Ray {
+//     fn at(&self, t: f32) -> Vec3 {
+//         return self.origin + t * self.direction
+//     }
+// }
