@@ -27,6 +27,7 @@ fn main() {
         "2" => run_project(&name, raytracing::simple_ppm),
         "4" => run_project(&name, raytracing::simple_viewport),
         "5" => run_project(&name, raytracing::simple_sphere),
+        "6.1" => run_project(&name, raytracing::surface_normals),
         _ => println!("sorry the function {} does not exist", name)
     }
 }

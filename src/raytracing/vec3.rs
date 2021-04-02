@@ -137,8 +137,8 @@ pub struct Ray {
     pub direction: Vec3
 }
 
-// impl Ray {
-//     fn at(&self, t: f32) -> Vec3 {
-//         return self.origin + t * self.direction
-//     }
-// }
+impl Ray {
+    pub fn at(&self, t: f32) -> Vec3 {
+        return self.origin + t * self.direction
+    }
+}
